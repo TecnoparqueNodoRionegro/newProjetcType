@@ -7,7 +7,7 @@ import { Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import { route, card } from '../../../theme'
 import SearchIcon from "@mui/icons-material/Search";
-// import parse from "html-react-parser";
+import parse from "html-react-parser";
 
 const Route = () => {
   const [data, setData] = React.useState([]);
@@ -41,10 +41,10 @@ const Route = () => {
     router.push("/src/jsx/components/dashboardUser/route#content")
   }
 
-  // useEffect(() => {
-  //   getMainCarousel();
-  //   getArticle();
-  // }, [search, values, filter]);
+  useEffect(() => {
+    getMainCarousel();
+    getArticle();
+  }, [search, values, filter]);
 
   const handleButtonHover = (buttonName, isHovered) => {
     setButtonHovered((prev) => ({
