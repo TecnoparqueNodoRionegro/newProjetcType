@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { menuAdmin } from "../../theme";
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
@@ -10,12 +10,16 @@ import MenuIcon from "@mui/icons-material/Menu";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import ListIcon from "@mui/icons-material/List";
 import SourceIcon from "@mui/icons-material/Source";
+import {ModalAction} from "../index"
+import { auth } from "../Auth";
 
 const MenuAdmin = () => {
   const [menu, setMenu] = useState(false);
   const [optionSale, setOptionSale] = useState(false);
   const [optionRequest, setOptionRequest] = useState(false);
   const [optionEditWeb, setOptionEditWeb] = useState(false);
+  const [aceptarModalIsOpen, setAceptarModalIsOpen] = useState(false);
+  let navigate = useNavigate();
 
   const addOptionsSale = (option, openMenu) => {
     setMenu(openMenu);
@@ -50,6 +54,26 @@ const MenuAdmin = () => {
     setOptionRequest(false);
     setOptionEditWeb(false);
   };
+
+  const openAceptarModal = async (item) => {
+    setAceptarModalIsOpen(true);
+  };
+
+  const closeAceptarModal = () => {
+    setAceptarModalIsOpen(false);
+  };
+
+  const logOut=async()=>{
+    console.log("Cerrar sesion")
+    localStorage.removeItem("users")
+    localStorage.removeItem("token")
+    auth
+    setTimeout(() => {
+      navigate('/')
+      location.reload();
+    }, 1000)
+    
+  }
 
   return (
     <div className="Menu-a">
@@ -89,10 +113,10 @@ const MenuAdmin = () => {
             <Link className="link-menu" to="/usuarios"><PeopleAltOutlinedIcon className="icono" />{menu ? " Usuarios" : ""}</Link>
           </div>
           <div className="ul-menu">
-            <Link className="link-menu" to="/perfilAdmin"><AccountCircleOutlinedIcon className="icono" />{menu ? " Perfil" : ""}</Link>
+            <Link className="link-menu" to="/perfil-admin"><AccountCircleOutlinedIcon className="icono" />{menu ? " Perfil" : ""}</Link>
           </div>
           <div className="ul-menu">
-            <button className="btn-menu">
+            <button onClick={()=>openAceptarModal()} className="btn-menu">
               <ExitToAppOutlinedIcon className="icono" />
               {menu ? " Cerrar sesion" : ""}
             </button>
@@ -106,6 +130,19 @@ const MenuAdmin = () => {
           <MenuIcon className="icon-toggle" />
         )}
       </button>
+      <ModalAction
+        isOpen={aceptarModalIsOpen}
+        onRequestClose={closeAceptarModal}
+        Accept="true"
+        title="Cerrar sesion"
+        onAccept={() => {
+          closeAceptarModal();
+        }}
+      >
+        <h4>Estas seguro de que quieres cerrar sesion?</h4>
+        <button onClick={()=>logOut()}>Aceptar</button>
+        <button onClick={()=>closeAceptarModal()}>Cancelar</button>
+      </ModalAction>
     </div>
   );
 };

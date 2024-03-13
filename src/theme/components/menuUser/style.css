@@ -95,6 +95,7 @@
   .btn-menu-right{
     margin-top: 10%;
     color:#ffffff;
+    background-color: transparent;
     text-decoration: none;
   }
   .nameUser {
@@ -117,6 +118,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  
+  .button-menu-burger{
+    background-color: transparent;
+    color: #ffffff;
   }
   
   @media (max-width: 720px) {

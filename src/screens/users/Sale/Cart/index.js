@@ -2,13 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import { Image } from 'react-bootstrap';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { shop } from '@/app/src/Components/Auth/index';
-import { styleInventory } from '@/app/src/Style/index';
+import { styleInventory } from "../../../../theme";
 import "bootstrap/dist/css/bootstrap.css";
-import MenuUser from "@/app/src/Components/navUser/MenuUser.js";
+import { MenuUser } from '../../../../components';
 import md5 from 'md5';
-import { auth } from "@/app/src/Components/Auth/index";
-import { api, resources } from "@/app/src/utils/sdk/";
+import { auth, shop } from '../../../../components/Auth';
+import { api,resources } from '../../../../utils/sdk';
 
 const Cart = () => {
   const [shopCart, setShopCart] = useState([]);

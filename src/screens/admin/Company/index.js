@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { MenuAdmin } from "../../../components";
 import "bootstrap/dist/css/bootstrap.css";
 import { profile } from "../../../theme";
-// import PhotoUser from "@/app/src/Assets/img/user3.jpg";
+import PhotoUser from "../../../assets/img/admin.png";
 import { api, resources } from "../../../utils/sdk";
 
 const Company = () => {
@@ -52,12 +52,12 @@ const Company = () => {
           <div className="row">
             <div className="col-lg-3 col-md-12 col-sm-12 col-sm-12 photo-role">
               <div className="photo-profile">
-                {/* <Image
+                <Image
                   src={PhotoUser}
                   alt=""
                   sizes="100vw"
                   className="photo-user"
-                /> */}
+                />
               </div>
               <p className="name-user">Empresa</p>
 

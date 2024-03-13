@@ -34,15 +34,31 @@
   
   .modal-card{
     min-width: 20%;
-    min-height: 40%;
+    min-height: 33%;
   }
   
   .modal-card thead, tbody, tfoot, tr, td, th{
     height: 100% !important;
   }
   
-  .info-card{
-    padding:3%
+  .info-card table{
+    border: none !important;
+  }
+
+  .info-card strong{
+    font-weight: 500;
+  }
+
+  .info-card strong,.info-card p{
+    font-size: 1.2rem;
+  }
+
+  .info-card p{
+    font-weight: 400;
+  }
+
+  .info-card img{
+    border-radius: 5px 0px 0px 5px;
   }
   
   .titulo-modal{

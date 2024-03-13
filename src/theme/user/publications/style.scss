@@ -1,3 +1,5 @@
+$color-btn:#93C567;
+
 .button-add-publications{
     font-size: 1.5rem;
     margin-top:5%
@@ -9,4 +11,32 @@
 
 .form-add-publications{
     margin-top: 5% !important;
+}
+
+.input-add-publication{
+    border: 0.5px solid #b1aeae;
+    border-radius: 5px;
+    width: 95%;
+    margin-bottom: 5%;
+    padding: 1%;
+}
+
+.title-add-publication{
+    font-size: 2.5rem;
+    border-bottom: 2px solid #0E5F8E;
+    color: #0E5F8E;
+    text-align: initial;
+}
+
+.btn-add-publications{
+    background-color: $color-btn;
+    color: white;
+    width: 60%;
+    padding: 2%;
+    border-radius: 5px;
+    margin-top: 15%;
+}
+
+.btn-add-publications a{
+    color: white;
 }

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-// import { auth } from "@/app/src/Components/Auth/index";
+import { auth } from "../Auth";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const MenuUser = () => {
@@ -30,10 +30,12 @@ const MenuUser = () => {
           <div className="ul-menu no-cell">
           <Link to="/tienda" className="link-menu-right">Tienda</Link>
           </div>
-          {/* {auth.token !== "rosk" ? (
+
+          {auth.token !== "rosk" ? (
             <>
               <div className="ul-menu no-cell">
-                <Link className="link-menu" href={routers.Auth}>
+                {/* <Link className="link-menu" href={routers.Auth}> */}
+                <Link className="link-menu" to="/login">
                   <p>Inicia sesión</p>
                 </Link>
               </div>
@@ -41,18 +43,20 @@ const MenuUser = () => {
           ) : (
             <>
               <div className="ul-menu no-cell">
-                {/* <Link className="link-menu" href={routers.cart}>
+                {/* <Link className="link-menu" href={routers.cart}> */}
+                <Link className="link-menu" to="/cart">
                   <ShoppingCartIcon className="icon" />
-                </Link> */}
-              {/* </div>
-              <div className="ul-menu no-cell"> */}
-                {/* <Link className="link-menu" href={routers.Auth}>
+                </Link>
+              </div>
+              <div className="ul-menu no-cell">
+                {/* <Link className="link-menu" href={routers.Auth}> */}
+                <Link className="link-menu" to="/login">
                   <AccountCircleIcon className="icon" />
                   <p>Hola, {auth.users.name}</p>
-                </Link> */}
-              {/* </div>
+                </Link>
+              </div>
               <div className="ul-menu button-menu-right">
-                <button onClick={() => setOpenMenu(!openMenu)}>
+                <button className="button-menu-burger" onClick={() => setOpenMenu(!openMenu)}>
                   {openMenu ? (
                     <CloseRoundedIcon className="icon-menu-right" />
                   ) : (
@@ -60,18 +64,18 @@ const MenuUser = () => {
                   )}
                 </button>
               </div>
-            </> */}
-          {/* )} */}
+            </>
+           )} 
         </div>
       </div>
-      {/* {auth.token !== "rosk" ? (
+      {auth.token !== "rosk" ? (
             <>
             </>
           ) : (
             <>
                <MenuUserRight style={openMenu} />
             </>
-          )} } */}
+          )}
      
     </div>
   );

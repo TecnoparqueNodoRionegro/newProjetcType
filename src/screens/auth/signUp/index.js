@@ -54,7 +54,7 @@ const SignUp = () => {
           .then((response) => {
             setShowAlert(1);
             setTimeout(() => {
-              navigate("/iniciarSesion");
+              navigate("/login");
             }, 3000);
           })
           .catch((error) => {
@@ -66,7 +66,7 @@ const SignUp = () => {
   };
 
   const login = () => {
-    router.push("/src/jsx/components/auth/login/");
+    router.push("/src/screens/auth/login/");
   };
 
   return (
@@ -153,7 +153,7 @@ const SignUp = () => {
             Aceptar
           </Button>
           <div className="footer-auth">
-            <Link to="/iniciarSesion" className="link-auth">
+            <Link to="/login" className="link-auth">
               ¿Ya tienes cuenta? Iniciar sesion
             </Link>
           </div>

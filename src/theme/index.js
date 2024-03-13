@@ -23,6 +23,9 @@ import store from './user/sale/style.css'
 import modalAction from './components/modalAction/style.css'
 import storeAdmin from './admin/store/style.css'
 import auth from './auth/style.css'
+import styleInventory from './admin/store/inventory/style.css'
+import requestAgent from './user/requestAgent/style.css'
+import stylePublication from './user/publications/style.css'
 
 export {
     menuAdmin,
@@ -48,4 +51,9 @@ export {
     menuUser,
     search,
     modalAction,
+    styleInventory,
+    auth,
+    requestAgent,
+    store,
+    stylePublication
 }

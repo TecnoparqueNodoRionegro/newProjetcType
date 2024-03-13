@@ -4,11 +4,13 @@ import { MenuAdmin } from "../../../components";
 import { profile } from "../../../theme";
 import { api,resources } from "../../../utils/sdk";
 // import { auth } from "@/app/src/Components/Auth/index";
+import { auth } from "../../../components/Auth";
 import PhotoUser from "../../../assets/img/admin.png";
 import { Image } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 const ProfileAdmin = () => {
   const [account, setAccount] = useState([]);
+  console.log(auth.users.id)
 
   const getAccounts = async () => {
     try {

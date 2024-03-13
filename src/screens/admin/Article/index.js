@@ -151,7 +151,7 @@ const Article = () => {
               </button>
             </div>
             <div className="form-add">
-              <Link className="btn-article btn-add" to="/agregarArticulo">
+              <Link className="btn-article btn-add" to="/agregar-articulo">
                 Agregar publicacion
               </Link>
             </div>

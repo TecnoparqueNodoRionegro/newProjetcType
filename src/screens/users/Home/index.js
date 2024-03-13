@@ -21,17 +21,18 @@ const Home = () => {
   const [active, setActive] = useState(true);
   const [activeFilter, setActiveFilter] = useState(10);
   let slider = [];
+  
 
   const getMainCarousel = async () => {
     const response = await api.get(
-      `${resources.article}?category=4&tags=2&state=1`
+      `${resources.article}?category=1&tags=7&state=1`
     );
     setMainCarrousel(response.data);
   };
 
   const getMiniCarousel = async () => {
     const response = await api.get(
-      `${resources.article}?category=4&tags=3&state=1`
+      `${resources.article}?category=5&tags=7&state=1`
     );
     getListMiniCarousel(response.data);
     console.log(response.data);
@@ -49,7 +50,7 @@ const Home = () => {
 
   const getVideo = async () => {
     const response = await api.get(
-      `${resources.article}?category=5&tags=2&state=1`
+      `${resources.article}?category=1&tags=8&state=1`
     );
     setVideo(response.data);
   };
@@ -76,11 +77,11 @@ const Home = () => {
   };
 
   useEffect(() => {
-    // if(miniCarousel.length===0){
-    //   getMiniCarousel()
-    //   console.log("vacio")
-    // }
-    // getNewsEvents();
+    if(miniCarousel.length===0){
+      getMiniCarousel()
+      console.log("vacio")
+    }
+    getNewsEvents();
     getMainCarousel();
     getVideo();
   }, [active]);

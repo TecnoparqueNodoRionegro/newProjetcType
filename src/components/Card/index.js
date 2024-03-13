@@ -19,7 +19,8 @@ export const Card = ({ children, info, styles, buttonStyles, textButton,isSale }
   return (
     <div className={`${styles}`}>
       {children}
-      <div className="col-12 text-center">
+      <div className={isSale ?'': `row justify-content-end`}>
+      <div className={`${isSale ? "col-12" : "col-8"} text-center`}>
         <button 
         className={buttonStyles}
         info={info} 
@@ -36,6 +37,7 @@ export const Card = ({ children, info, styles, buttonStyles, textButton,isSale }
           isSale={isSale}
         />
       )}
+      </div>
     </div>
   );
 };

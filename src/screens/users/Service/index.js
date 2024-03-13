@@ -5,7 +5,7 @@ import { Carousel } from "react-bootstrap";
 import { api,resources } from "../../../utils/sdk";
 import { MenuUser, Button, IconoMouse, Card, Search, Footer } from '../../../components';
 import { service, card } from '../../../theme'
-// import parse from "html-react-parser";
+import parse from "html-react-parser";
 
 const Service = () => {
   const [data, setData] = React.useState([]);
@@ -35,10 +35,10 @@ const Service = () => {
     setSearch(false);
   };
 
-  // useEffect(() => {
-  //   getMainCarousel();
-  //   getArticle();
-  // }, [search, values, filter]);
+  useEffect(() => {
+    getMainCarousel();
+    getArticle();
+  }, [search, values, filter]);
 
   const handleButtonHover = (buttonName, isHovered) => {
     setButtonHovered((prev) => ({

@@ -1,6 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
-// import imagen from "@/app/src/Assets/img/img.jpg";
+import imagen from "../../assets/img/imgAuth.jpg";
 import { modalAgent } from "../../theme";
 
 export const ModalAgent = ({ isOpen, onRequestClose, info }) => {
@@ -37,14 +37,14 @@ export const ModalAgent = ({ isOpen, onRequestClose, info }) => {
               <spam className="text2"> {info.account.address}</spam>
             </p>
           </div>
-          {/* <div>
+          <div>
             <Image
               className="circle-image-modal"
               src={imagen}
               alt=""
               sizes="100vw"
             />
-          </div> */}
+          </div>
         </div>
         <h2 className="sub-modal">Información del agente</h2>
         <p>
