@@ -14,7 +14,8 @@ import "bootstrap/dist/css/bootstrap.css";
 import { auth } from "../../../theme";
 import { Alerts,Button } from "../../../components";
 import { api,resources } from "../../../utils/sdk";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { navigate } from '../../../navigate';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -22,6 +23,7 @@ const Login = () => {
   const [password, setPassword] = useState();
   const [showAlert, setShowAlert] = useState(0);
   const handleClickShowPassword = () => setShowPassword((show) => !show);
+  let navigate = useNavigate();
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
@@ -61,11 +63,13 @@ const Login = () => {
           setShowAlert(2);
           if(response.data[0].type_account_id===1){
             setTimeout(() => {
-              router.push("/src/Page/Admin/");
+              navigate('/admin')
+              location.reload();
             }, 1000);
           }else{
             setTimeout(() => {
-              router.push("/src/Page/User/Home/");
+              navigate('/')
+              location.reload();
             }, 1000);
           }
         }
@@ -136,7 +140,7 @@ const Login = () => {
                     Aceptar
                   </Button>
                   <div className="footer-auth">
-                    <Link to="/registrarse" className="link-auth">¿No tienes cuenta? Registrarse</Link>
+                    <Link to="/registro" className="link-auth">¿No tienes cuenta? Registrarse</Link>
                   </div>
                 </div>
               </div>

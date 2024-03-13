@@ -7,7 +7,7 @@ import { store, cardSale } from '../../../theme'
 import { MenuUser, Button, Alerts, Card, Search, Footer } from '../../../components';
 import SelectAmount from "./selectAmount.js";
 import { api,resources } from "../../../utils/sdk/index.js";
-// import { auth } from "@/app/src/Components/Auth/index";
+import { auth } from "../../../components/Auth/index.js";
 
 const Sale = (props) => {
   const { stylesCard } = props;
@@ -137,14 +137,14 @@ const Sale = (props) => {
             ))}
           </div>
           <Search placeholder="Buscar..." titulo="Búsqueda" />
-          {/* {auth.token !== "rosk" ? (
+          {auth.token !== "rosk" ? (
               <>
                 <b>Para comprar debes de iniciar sesión</b>
               </>
             ) : (
               <>
               </>
-            )} */}
+            )}
         </div>
         <Carousel className="carousel-products" interval={null} style={{ width: '100%', height: '100%' }}>
           {list.length > 0 ? (
@@ -159,7 +159,7 @@ const Sale = (props) => {
                           <div className="row page-products">
                             <p className="col-12 name-products-store">{item2.name}</p>
                             <p className="col-lg-12 col-md-12 col-sm-12"><b>Precio:</b> ${item2.price}</p>
-                            {/* {auth.token !== "rosk" ? (
+                            {auth.token !== "rosk" ? (
                             <>
                             </>
                             ) : (
@@ -170,7 +170,7 @@ const Sale = (props) => {
                                 <button className="btn-card-products" onClick={() => handleShop(item2.id, item2.name, item2.price, item2.file.file)}>Agregar al carrito <AddShoppingCartIcon /></button>
                               </div>
                               </>
-                            )} */}
+                            )}
                           </div>
                         </Card>
                       </div>

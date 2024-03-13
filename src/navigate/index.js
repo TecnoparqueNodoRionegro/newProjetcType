@@ -16,8 +16,13 @@ import ProfileAdmin from "../screens/admin/Profile"
 import Company from "../screens/admin/Company"
 import EditArticle from "../screens/admin/Article/EditArticle"
 import EditUser from "../screens/admin/Users/EditUser"
-import Login from "../screens/auth/login"
+import Auth from "../screens/auth/login"
 import SignUp from "../screens/auth/signUp"
+import Cart from "../screens/users/Sale/Cart"
+import Profile from "../screens/users/Profile"
+import RequestAgent from "../screens/users/RequestAgent";
+import PublicationsAgent from "../screens/users/Agent";
+import AddPublicationAgent from "../screens/users/Agent/AddPublications"
 
 export const navigate=[
     {
@@ -41,7 +46,7 @@ export const navigate=[
         component:<HomeAdmin/>
     },
     {
-        path: '/tiendaAdmin',
+        path: '/administrar-tienda',
         component:<Store/>
     },
     {
@@ -69,7 +74,7 @@ export const navigate=[
         component:<EditArticle/>
     },
     {
-        path: '/agregarArticulo',
+        path: '/agregar-articulo',
         component:<FormArticle/>
     },
     {
@@ -81,11 +86,11 @@ export const navigate=[
         component:<EditUser/>
     },
     {
-        path: '/nuevoUsuario',
+        path: '/nuevo-usuario',
         component:<AddUser/>
     },
     {
-        path: '/perfilAdmin',
+        path: '/perfil-admin',
         component:<ProfileAdmin/>
     },
     {
@@ -93,12 +98,32 @@ export const navigate=[
         component:<Company/>
     },
     {
-        path: '/iniciarSesion',
-        component:<Login/>
+        path: '/login',
+        component:<Auth/>
     },
     {
-        path: '/registrarse',
+        path: '/registro',
         component:<SignUp/>
+    },
+    {
+        path: '/cart',
+        component:<Cart/>
+    },
+    {
+        path: '/perfil',
+        component:<Profile/>
+    },
+    {
+        path: '/solicitud-agente',
+        component:<RequestAgent/>
+    },
+    {
+        path: '/publicaciones-agente',
+        component:<PublicationsAgent/>
+    },
+    {
+        path: '/agente/publicar',
+        component:<AddPublicationAgent/>
     },
 ]
 

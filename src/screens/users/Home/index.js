@@ -21,6 +21,7 @@ const Home = () => {
   const [active, setActive] = useState(true);
   const [activeFilter, setActiveFilter] = useState(10);
   let slider = [];
+  
 
   const getMainCarousel = async () => {
     const response = await api.get(

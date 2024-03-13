@@ -49,6 +49,7 @@
 
 .category-tags{
     border: solid 1px #0E5F8E;
+    background-color: white;
 }
 
 .hovered, .activeFilterTags {

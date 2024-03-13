@@ -47,13 +47,10 @@ const ModalCard = ({
           </div>
           :
           <div>
-            <h1 className="titulo-modal">Más información</h1> 
             <div className="close-button" onClick={onRequestClose}>
               X
             </div>
-          <p>
             <spam className="text">{info}</spam>
-          </p>
           </div>
           }
         </div>

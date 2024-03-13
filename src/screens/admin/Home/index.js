@@ -54,7 +54,7 @@ const HomeAdmin = () => {
                                             <CardsHome title='Empresa' Icon={<BusinessIcon/>} link="/empresa" style='1'/>  
                                         </div>
                                         <div className='col-lg-3 col-md-3 col-sm-4 card-quick-link'>
-                                            <CardsHome title='Tienda' Icon={<LocalGroceryStoreIcon/>} link="/tiendaAdmin" style='2'/>  
+                                            <CardsHome title='Tienda' Icon={<LocalGroceryStoreIcon/>} link="/administrar-tienda" style='2'/>  
                                         </div>
                                         <div className='col-lg-3 col-md-3 col-sm-10 card-quick-link'>
                                             <CardsHome title='Categorias' Icon={<CategoryIcon/>} link="/categorias" style='3'/>  

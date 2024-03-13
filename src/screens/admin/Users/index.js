@@ -323,7 +323,7 @@ const Users = () => {
             ) : (
               <div className="scroll">
                 <div className="form-add">
-                  <Link className="btn-article btn-add" to="/nuevoUsuario">
+                  <Link className="btn-article btn-add" to="/nuevo-usuario">
                     Agregar usuario
                   </Link>
                 </div>
